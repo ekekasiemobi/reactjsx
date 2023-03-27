@@ -1,13 +1,25 @@
-#ifndef MAIN_H
-#define MAIN_H
-#include <stdarg.h>
-#include <stdio.h>
-#include <unistd.h>
+#ifndef _MAIN_H
+#define _MAIN_H
 
+#include "stdlib.h"
+#include "stdio.h"
+#include "stdarg.h"
+
+/**
+ * struct function_s - structure holding an identifier and a function
+ * @identifier: character identifying action
+ * @print_function: function excecuted when identifier is identified
+*/
+
+typedef struct function_s
+{
+	char *identifier;
+	int (*print_function)(va_list ap);
+} function_t;
+
+
+int _putchar(char c);
 int _printf(const char *format, ...);
-int handle_print(const char *fmt, int *i,
-va_list list, char buffer[], int flags, int width, int precision, int size);
-
 
 #endif /* MAIN_H */
 
