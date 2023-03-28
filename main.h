@@ -1,9 +1,9 @@
 #ifndef _MAIN_H
 #define _MAIN_H
 
-#include "stdlib.h"
-#include "stdio.h"
-#include "stdarg"
+#include <stdlib.h>
+#include <stdio.h>
+#include <stdarg.h>
 
 typedef struct function_s
 {

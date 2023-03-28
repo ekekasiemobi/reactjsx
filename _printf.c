@@ -1,7 +1,4 @@
 #include "main.h"
-#include <stdio.h>
-#include <stdarg.h>
-#include <string.h>
 
 /**
  * _printf - produces output accourding to format
@@ -11,37 +8,15 @@
 
 int _printf(const char *format, ...)
 {
-	va_list ap;
-	int len = 0;
-	int i = 0;
-	int j = 0;
-	int is_identifier = 0;
-	function_t list[] = {
-		{"s", print_string},
-		{"c", print_char},
-		{"i", printi},
-		{"d", printi},
-		{"b", int_to_bin},
-		{NULL, NULL},
-	};
+	int i;
 
-	if (format == NULL)
+	for (i = 0; format[i] != '\0'; i++)
 	{
-		exit(1);
+		_putchar(i);
 	}
-
-	va_start(ap, format);
-
-	while (format[i] != '\0')
+	else 
 	{
-		if (format[i] != '%')
-		{
-			len += _putchar(format[i]);
-		}
-		else
-		{
-			i++;
-		}
+		return (NULL);
 	}
 }
 
