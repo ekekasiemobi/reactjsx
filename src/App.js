@@ -1,10 +1,21 @@
 import React from "react";
-import Contacts from './views/ReactProps/components/Contact';
+// import Contacts from './views/ReactProps/components/Contact';
+import emojipedias from "./views/MappingData/components/emojipedia";
+import CreateEmoji from "./views/MappingData/components/Emojis";
+
 
 function App() {
   return (
     <div>
-      <Contacts />
+      {/* <Contacts /> */}
+      <h1>
+        <span>emojipedia</span>
+      </h1>
+
+      <dl className="dictionary">
+        {emojipedias.map(CreateEmoji)}
+      </dl>
+     
     </div>
   );
 }
