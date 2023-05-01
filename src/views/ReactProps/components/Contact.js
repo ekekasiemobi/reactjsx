@@ -1,5 +1,6 @@
 import React from 'react';
 import ImgCard from './Card.js';
+import '../components/styles.css';
 
 function Contacts() {
     return (
