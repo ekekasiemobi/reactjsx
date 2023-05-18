@@ -4,7 +4,9 @@ import React from "react";
 // import CreateEmoji from "./views/MappingData/components/Emojis";
 // import Form from './views/ConditionalRendring/components/form';
 // import Form from './views/CRPractise/components/App';
-import Calculator from './views/UseState/count';
+// import Calculator from './views/UseState/count';
+// import Time from './views/USPractice/Time';
+import Form from './views/ReactForm/Form'
 
 
 function App() {
@@ -21,7 +23,9 @@ function App() {
      {/* <Form /> */}
 
      {/* <Form /> */}
-     <Calculator />
+     {/* <Calculator /> */}
+     {/* <Time /> */}
+     <Form />
     </div>
   );
 }
