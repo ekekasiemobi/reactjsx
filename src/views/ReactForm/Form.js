@@ -3,25 +3,78 @@ import './styles.css'
 
 function Form() {
 
-    const [name, setName] = useState("")
-    const [headText, setHeadText] = useState("")
-    const [onClick, setOnClick] = useState(false)
+    const [onSubmit, setOnSubmit] = useState(false)
+    const [fullName, setFullName] = useState({
+        fName: "",
+        lName: "",
+        email: "",
+    })
 
     function handleChange (event){
-        setName (event.target.value)
-    }
+        const inputValue = event.target.value;
+        const inputName = event.target.name;
 
-    function handleClick(event){
-        setOnClick (true)
-        setHeadText(name)
+        setFullName (prevValue => {
+            if (inputName === "fName") {
+                return{
+                    fName: inputValue,
+                    lName: prevValue.lName,
+                    email: prevValue.email
+                };
+                
+            }else if (inputName === "lName") {
+                return{
+                    fName: prevValue.fName,
+                    lName: inputValue,
+                    email: prevValue.email,
+                };
+            }else if ( inputName === "email"){
+                return{
+                    fName: prevValue.fName,
+                    lName: prevValue.lName,
+                    email: inputValue
+                }
+            }
+        });
+
+        
+    }
+   
+
+    function handleSubmit(event){
+        event.preventDefault();
+        setOnSubmit (true)
     }
 
   return (
     <div className="container">
-        <form>
-            {!onClick ? <h2> Hello {name} </h2> : <h2>Welcome {headText} </h2>}
-            <input onChange={handleChange} type="text" placeholder="What's your name?" />
-            <button type="submit" onClick={handleClick}>Submit</button>
+        <form method="POST" onSubmit={handleSubmit}>
+            {!onSubmit ? <h2> Hello {fullName.fName} {fullName.lName} </h2> : <h2>Welcome {fullName.fName} {fullName.lName} </h2>}
+            <p>{fullName.email}</p>
+            <input 
+                onChange={handleChange} 
+                type="text" 
+                placeholder="First name" 
+                name="fName" 
+                value={fullName.fName} 
+            />
+            <input 
+                onChange={handleChange} 
+                type="text" 
+                placeholder="Last name" 
+                name="lName" 
+                value={fullName.lName}
+            />
+            <input 
+                onChange={handleChange} 
+                type="email" 
+                placeholder="Email" 
+                name="email" 
+                value={fullName.Email}
+            />
+
+
+            <button type="submit">Submit</button>
         </form>
     </div>
   );
