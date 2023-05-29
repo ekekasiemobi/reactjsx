@@ -6,7 +6,8 @@ import React from "react";
 // import Form from './views/CRPractise/components/App';
 // import Calculator from './views/UseState/count';
 // import Time from './views/USPractice/Time';
-import Form from './views/ReactForm/Form'
+// import Form from './views/ReactForm/Form'
+import Todo from './views/SpreadOperator/Todo'
 
 
 function App() {
@@ -25,7 +26,8 @@ function App() {
      {/* <Form /> */}
      {/* <Calculator /> */}
      {/* <Time /> */}
-     <Form />
+     {/* <Form /> */}
+     < Todo />
     </div>
   );
 }
